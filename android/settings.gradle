@@ -1,2 +1,2 @@
-include ':react-native-paytabs'
-project(':paytabs-android-SDK-v2.5').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-paytabs/android/paytabs-android-SDK-v2.5')
+include ':rn-paytabs'
+project(':paytabs-android-SDK-v2.5').projectDir = new File(rootProject.projectDir, '../node_modules/rn-paytabs/android/paytabs-android-SDK-v2.5')

@@ -1,5 +1,5 @@
 {
-  "name": "react-native-paytabs",
+  "name": "rn-paytabs",
   "version": "1.0.0",
   "description": "React Native sdk for paytabs payment.",
   "main": "index.js",
