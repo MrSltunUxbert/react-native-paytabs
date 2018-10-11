@@ -1,6 +1,6 @@
 {
   "name": "rn-paytabs",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "React Native sdk for paytabs payment.",
   "main": "index.js",
   "scripts": {
@@ -13,7 +13,7 @@
   ],
   "author": "Ramy Hegazy",
   "peerDependencies": {
-    "react-native": "0.56.0",
+    "react-native": "0.57.2",
     "react-native-windows": "0.41.0-rc.1"
   }
 }
