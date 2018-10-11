@@ -1,21 +1,16 @@
 
-# rn-paytabs ![Beta](https://img.shields.io/badge/rn--paytabs-Beta-yellow.svg) [![npm version](https://badge.fury.io/js/rn-paytabs.svg)](https://badge.fury.io/js/rn-paytabs)
+# rn-paytabs [![Beta](https://img.shields.io/badge/rn--paytabs-Beta-yellow.svg)](https://badge.fury.io/js/rn-paytabs) [![npm version](https://badge.fury.io/js/rn-paytabs.svg)](https://badge.fury.io/js/rn-paytabs)
 ## Unofficial react native wrapper for paytabs Native SDK
 
 ## Getting started
 
 `$ npm install rn-paytabs --save`
 
-### Mostly automatic installation
-
-`$ react-native link rn-paytabs`
-
 ### Manual installation
-
 
 #### Android
 
-Please check [BUILD.md](BUILD.md) to help you build with android.
+Please check [ANDROID.md](docs/ANDROID.md) to help you build with android.
 
 1. Open up `android/app/src/main/java/[...]/MainActivity.java`
   - Add `import com.reactlibrary.RNPaytabsPackage;` to the imports at the top of the file
@@ -44,50 +39,52 @@ Please check [BUILD.md](BUILD.md) to help you build with android.
 import RNPaytabs from 'rn-paytabs';
 
 RNPaytabs.start({
-      "pt_merchant_email": "test@merchant.com",
-      "pt_secret_key": "",//Add your Secret Key Here
-      "pt_transaction_title": "Mr. John Doe",
-      "pt_amount": "1",
-      "pt_currency_code": "USD",
-      "pt_shared_prefs_name": "myapp_shared",
-      "pt_customer_email": "test@example.com",
-      "pt_customer_phone_number": "0097300001",
-      "pt_order_id": "1234567",
-      "pt_product_name": "Tomato",
-      "pt_timeout_in_seconds": "300", //Optional
-      "pt_address_billing": "Flat 1,Building 123, Road 2345",
-      "pt_city_billing": "Juffair",
-      "pt_state_billing": "Manama",
-      "pt_country_billing": "BHR",
-      "pt_postal_code_billing": "00973", //Put Country Phone code if Postal code not available '00973'//
-      "pt_address_shipping": "Flat 1,Building 123, Road 2345",
-      "pt_city_shipping": "Juffair",
-      "pt_state_shipping": "Manama",
-      "pt_country_shipping": "Bahrain",
-      "pt_postal_code_shipping": "00973" //Put Country Phone code if Postal
-    }, (response) => {
-      // Callback for success & fail.
+  "pt_merchant_email": "",
+  "pt_secret_key": "",// Add your Secret Key Here
+  "pt_transaction_title": "Mr. John Doe",
+  "pt_amount": "1.0",
+  "pt_currency_code": "BHD",
+  "pt_shared_prefs_name": "myapp_shared",
+  "pt_customer_email": "test@example.com",
+  "pt_customer_phone_number": "+97333109781",
+  "pt_order_id": "1234567",
+  "pt_product_name": "Tomato",
+  "pt_timeout_in_seconds": "300", //Optional
+  "pt_address_billing": "Flat 1 Building 123 Road 2345",
+  "pt_city_billing": "Juffair",
+  "pt_state_billing": "Manama",
+  "pt_country_billing": "BHR",
+  "pt_postal_code_billing": "00973", //Put Country Phone code if Postal code not available '00973'//
+  "pt_address_shipping": "Flat 1 Building 123 Road 2345",
+  "pt_city_shipping": "Juffair",
+  "pt_state_shipping": "Manama",
+  "pt_country_shipping": "BHR",
+  "pt_postal_code_shipping": "00973" //Put Country Phone code if Postal
+}, (response) => {
+  // Callback for success & fail.
 
-      // { pt_token_customer_email: '',pt_token: '',pt_token_customer_password: '', pt_transaction_id: '123456',pt_response_code: '100' }
+  // { pt_token_customer_email: '',pt_token: '',pt_token_customer_password: '', pt_transaction_id: '123456',pt_response_code: '100' }
 
-      RNPaytabs.log("on Response Payment");
-      // Response Code: 100 successful otherwise fail
-      if (response.pt_response_code == '100')
-        RNPaytabs.log("Transaction Id: " + response.pt_transaction_id);
-      else
-        RNPaytabs.log("Otherwise Response: " + response.pt_response_code);
+  RNPaytabs.log("on Response Payment");
+  // Response Code: 100 successful otherwise fail
+  if (response.pt_response_code == '100')
+    RNPaytabs.log("Transaction Id: " + response.pt_transaction_id);
+  else
+    RNPaytabs.log("Otherwise Response: " + response.pt_response_code);
 
-      // Tokenization
-      //RNPaytabs.log(response.pt_token_customer_email);
-      //RNPaytabs.log(response.pt_token_customer_password);
-      //RNPaytabs.log(response.pt_token);
+  // Tokenization
+  //RNPaytabs.log(response.pt_token_customer_email);
+  //RNPaytabs.log(response.pt_token_customer_password);
+  //RNPaytabs.log(response.pt_token);
 
-    });
+});
 ```
 
 ## Next
 
-#### [TODO] iOS
+#### [Beta] iOS
+
+Please check [IOS.md](docs/IOS.md) to help you build with android.
 
 1. In XCode, in the project navigator, right click `Libraries` ➜ `Add Files to [your project's name]`
 2. Go to `node_modules` ➜ `rn-paytabs` and add `RNPaytabs.xcodeproj`
@@ -101,4 +98,3 @@ RNPaytabs.start({
 2. Open up your `MainPage.cs` app
   - Add `using Paytabs.RNPaytabs;` to the usings at the top of the file
   - Add `new RNPaytabsPackage()` to the `List<IReactPackage>` returned by the `Packages` method
-  
