@@ -42,7 +42,9 @@ export default class App extends Component<Props> {
       "pt_city_shipping": "Juffair",
       "pt_state_shipping": "Manama",
       "pt_country_shipping": "BHR",
-      "pt_postal_code_shipping": "00973" //Put Country Phone code if Postal
+      "pt_postal_code_shipping": "00973", //Put Country Phone code if Postal
+      "pt_color": "#3a33ff",
+      "pt_theme_light": false
     }, (response) => {
       // Callback for success & fail.
 

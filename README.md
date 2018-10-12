@@ -59,7 +59,9 @@ RNPaytabs.start({
   "pt_city_shipping": "Juffair",
   "pt_state_shipping": "Manama",
   "pt_country_shipping": "BHR",
-  "pt_postal_code_shipping": "00973" //Put Country Phone code if Postal
+  "pt_postal_code_shipping": "00973", //Put Country Phone code if Postal
+  "pt_color": "#3a33ff", // for IOS only
+  "pt_theme_light": false // for IOS only
 }, (response) => {
   // Callback for success & fail.
 
